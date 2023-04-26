@@ -1,13 +1,19 @@
 <style>
 h2{
     text-align: center;
+    font-size: 20px;
 }
 div{
     text-align: center;
 }
-</style>
-<h2>Hero Details</h2>
+h3{
+    text-align: center;
+    font-size: 20px;
+}
 
+/* Practice */
+</style>
+<br> <br>
 <div>
     <label for ='heroname'><b>Hero Name: </b></label>
     <input id ='heroname'[(ngModel)] = "hero.name" >
@@ -17,3 +23,36 @@ div{
     <span><b>Id: </b> </span>{{hero.id}}
     <span> | <b>Name: </b> </span>{{hero.name}}
 </div>
+<br><br>
+
+
+
+<!-- MOCKDATA -->
+<h3>Heroes Lists</h3>
+<ul class="heroes">
+    <li *ngFor="let hero of heroes">
+      <button [class.selected]="hero === selectedHero" type="button" (click)="onSelect(hero)">
+        <span class="badge">{{hero.id}}</span>
+        <span class="name">{{hero.name}}</span>
+      </button>
+    </li>
+  </ul>
+
+  <div *ngIf="selectedHero">
+    <h2>Hero Details </h2>
+    <div> 
+        <b style="color: red;"> Id: </b>{{selectedHero.id}}
+      <label for="hero-name">| <b style="color: red;"> Hero Name: </b></label>
+      <input id="hero-name" [(ngModel)]="selectedHero.name" placeholder="name">
+    </div>
+  </div>
+  <br><br>
+<!--  -->
+
+
+<!-- Practice -->
+<!-- Step 3 -->
+<label for="item-input">Add an item: </label>
+<input type="text" id="item-input" #newItem>
+<button type="button" (click)="addNewItem(newItem.value)">Add to parent's list</button>
+

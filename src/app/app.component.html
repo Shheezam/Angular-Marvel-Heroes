@@ -291,6 +291,9 @@
       visibility: hidden;
     }
   }
+  ul{
+    list-style-type:none;
+  }
 </style>
 
 <!-- Toolbar -->
@@ -306,10 +309,14 @@
  <pre>Iron Man: Hello </pre> <br><br>
  <pre>My Name Is Par: Hi</pre>
   </div>
-<app-heroes-lists></app-heroes-lists>
+  <!-- Step 5 -->
+<app-heroes-lists (newItemEvent)="addItem($event)"></app-heroes-lists>
+
+
+<ul>
   
-
-
+  <li *ngFor="let item of items">{{item}}</li>
+</ul>
   
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
