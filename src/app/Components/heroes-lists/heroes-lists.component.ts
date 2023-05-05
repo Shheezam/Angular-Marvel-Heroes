@@ -9,7 +9,7 @@ import { HEROES } from 'src/app/\'Mock-data/mock-heroes';
 })
 export class HeroesListsComponent {
 
-  //TERMINAL NAME
+  //PRACTICE
   hero: Heroes = {
      id : 1,
      name : 'Iron Man'
