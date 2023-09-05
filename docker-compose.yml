@@ -5,7 +5,7 @@ services:
     ports:
       - "4200:4200"
     volumes:
-      - .:/app
+      - ./src:/app/src
     environment:
       - .env
     command: >
